@@ -1,2 +1,2 @@
 # expenses
-My expenses
+To collect my expenses
