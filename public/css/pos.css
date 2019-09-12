@@ -1,0 +1,81 @@
+body {
+    padding-top: 70px;
+}
+
+.red {
+    color: #a94442;
+}
+
+.pl25 {
+    padding-left: 25px;
+}
+
+.pl50 {
+    padding-left: 38px;
+}
+
+.pl40 {
+    padding-left: 40px;
+}
+
+.pr40 {
+    padding-right: 40px;
+}
+
+.pl80 {
+    padding-left: 80px;
+}
+
+.user_info {
+    color: #9d9d9d;
+    padding-left:50px;
+    padding-right:20px;
+    padding-top: 9px;
+}
+
+.user_info span {
+
+}
+
+.product_search_form  ul {
+    float: right;
+}
+
+.product_search_form  li {
+    list-style: none;
+    color: #a94442;
+}
+
+.total_to_pay {
+    font-size: large;
+}
+
+.navbar-nolink {
+    color: #9d9d9d;
+    cursor: default;
+}
+.navbar {
+    padding: 0;
+}
+
+.form-group {
+    margin-bottom: .4rem;
+}
+
+.table td, .table th {
+    padding: .3rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.order-form  .pl80 .col-sm-4.col-form-label.col-form-label-sm, 
+.order-form .pl40 .col-sm-3.col-form-label.col-form-label-sm,
+.order-form .pl80 .col-sm-7.col-form-label.col-form-label-sm
+{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+table.table-striped tbody tr:hover {
+    background-color: #c3e6cb;
+}
