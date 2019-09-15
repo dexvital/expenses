@@ -1,0 +1,78 @@
+{# app/Resources/views/user/login.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block moduletitle %}
+    {% trans %}Login{% endtrans %}
+{% endblock %}
+
+{% block style %}
+    <style>
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #eee;
+        }
+
+        .form-signin {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+        .form-signin .checkbox {
+            font-weight: normal;
+        }
+        .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <header class="container">
+        <div class="row">
+            <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'lv'})) }}">LV</a>
+            &nbsp<a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">EN</a>
+            &nbsp<a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'ru'})) }}">RU</a>
+        </div>
+    </header>
+    <div class="container">
+        <form class="form-signin" action="{{ path('login') }}" method="post" name="form">
+            <h2 class="form-signin-heading">{% trans %}Login{% endtrans %}</h2>
+            {% if error %}
+                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            <label for="form_username" class="sr-only required">{% trans %}Username{% endtrans %}</label>
+            <input type="text" value="{{ last_username }}" placeholder="{% trans %}Username{% endtrans %}" class="form-control"
+                   required="required" name="_username" id="form_username">
+            <label for="form_password" class="sr-only required">{% trans %}Password{% endtrans %}</label>
+            <input type="password" placeholder="{% trans %}Password{% endtrans %}" class="form-control"
+                   required="required" name="_password" id="form_password">
+            <button class="btn btn-lg btn-primary btn-block" name="form[submit]" id="form_submit" type="submit">{% trans %}Submit{% endtrans %}</button>
+        </form>
+
+    </div> <!-- /container -->
+
+
+{% endblock %}
